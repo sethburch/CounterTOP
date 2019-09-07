@@ -1,0 +1,497 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://themes/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Control.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Player1Score.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player2Score.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/TransitionShader.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=6]
+[ext_resource path="res://assets/fonts/BigFont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/ui/arrow.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/effects/shadow1.png" type="Texture" id=9]
+[ext_resource path="res://FutilePro.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/sprites/effects/shadow2.png" type="Texture" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "option1_select"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rematch:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.321569, 0.466667, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Rematch:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -240, 0 ), Vector2( -210, 0 ), Vector2( -220, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Quit:custom_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Quit:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -240, 42 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "option2_select"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rematch:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Rematch:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -240, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Quit:custom_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.321569, 0.466667, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Quit:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -240, 42 ), Vector2( -210, 42 ), Vector2( -220, 42 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 4.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rematch:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.6, 1.9, 1.95 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -260, 0 ), Vector2( -240, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Quit:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.7, 2, 2.05 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 42 ), Vector2( -260, 42 ), Vector2( -240, 42 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "set_process"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 69
+use_mipmaps = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=5]
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.6, 0.8, 0.85, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 25.9575, -82.5321 ), Vector2( 25.9575, 51.8615 ), Vector2( 25.9575, 57.5631 ), Vector2( 25.9575, 47.789 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../shadow1:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 9 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../../../../MainCamera")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.1, 15.0, 8.0 ],
+"method": "shake"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "res://assets/sound/fx/big_land", 1, false ],
+"method": "play_sound"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.4, 1.6, 1.65, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 476.881, -83.8667 ), Vector2( 476.881, 132.192 ), Vector2( 476.881, 140.766 ), Vector2( 476.881, 130.477 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../shadow2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 9 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../../../../MainCamera")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.1, 15.0, 8.0 ],
+"method": "shake"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "res://assets/sound/fx/big_land", 1, false ],
+"method": "play_sound"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=7]
+size = 86
+use_mipmaps = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=8]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "3", "2", "1", "GO" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "focus_player_1"
+}, {
+"args": [  ],
+"method": "focus_player_2"
+}, {
+"args": [  ],
+"method": "enable_movement"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../../../MainCamera")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.9, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_change_mode"
+}, {
+"args": [ 0 ],
+"method": "_change_mode"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Player1Score:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.1, 1.6, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -170, 0.327 ), Vector2( 0.238152, 0.326553 ), Vector2( -5, 0.327 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../Player2Score:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.9, 2.4, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 650, -0.472 ), Vector2( 489.742, -0.471878 ), Vector2( 493, -0.472 ) ]
+}
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.179489
+margin_right = 0.179504
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Player1Score" parent="." instance=ExtResource( 3 )]
+margin_left = 0.238152
+margin_top = 0.326553
+margin_right = 150.238
+margin_bottom = 56.3266
+
+[node name="Player2Score" parent="." instance=ExtResource( 4 )]
+margin_left = -150.258
+margin_top = -0.471878
+margin_right = -0.258423
+margin_bottom = 55.5281
+
+[node name="Transition" parent="." instance=ExtResource( 5 )]
+
+[node name="Menu" type="VBoxContainer" parent="Transition"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = -93.0
+margin_right = 194.0
+margin_bottom = -23.0
+script = ExtResource( 6 )
+
+[node name="Rematch" type="Label" parent="Transition/Menu"]
+margin_right = 164.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
+text = "Rematch?"
+
+[node name="Quit" type="Label" parent="Transition/Menu"]
+margin_top = 37.0
+margin_right = 164.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Quit"
+
+[node name="MenuAnim" type="AnimationPlayer" parent="Transition/Menu"]
+playback_speed = 2.0
+anims/option1_select = SubResource( 1 )
+anims/option2_select = SubResource( 2 )
+anims/slide = SubResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="Transition/Menu"]
+visible = false
+margin_top = 74.0
+margin_right = 32.0
+margin_bottom = 106.0
+texture = ExtResource( 8 )
+
+[node name="shadow1" type="Sprite" parent="Transition"]
+visible = false
+position = Vector2( 117.023, 99.9177 )
+scale = Vector2( 4.26858, 4.26859 )
+texture = ExtResource( 9 )
+
+[node name="shadow2" type="Sprite" parent="Transition"]
+visible = false
+position = Vector2( 543.739, 182.837 )
+scale = Vector2( 3.41121, 3.41121 )
+texture = ExtResource( 9 )
+
+[node name="Name" type="Label" parent="Transition"]
+margin_left = 25.9575
+margin_top = -82.5321
+margin_right = 217.958
+margin_bottom = -21.532
+custom_fonts/font = SubResource( 4 )
+text = "Toast"
+
+[node name="NameAnim" type="AnimationPlayer" parent="Transition/Name"]
+playback_speed = 2.0
+anims/transition = SubResource( 5 )
+
+[node name="Wins" type="Label" parent="Transition"]
+margin_left = 476.881
+margin_top = -83.8667
+margin_right = 620.881
+margin_bottom = -22.8667
+custom_fonts/font = SubResource( 4 )
+text = "Wins"
+
+[node name="WinAnim" type="AnimationPlayer" parent="Transition/Wins"]
+playback_speed = 2.0
+anims/transition = SubResource( 6 )
+
+[node name="StartGame" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -39.0
+margin_right = 58.0
+margin_bottom = 37.0
+rect_pivot_offset = Vector2( 52.6715, 40.6824 )
+custom_fonts/font = SubResource( 7 )
+text = "GO"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StartGame"]
+playback_speed = 5.0
+anims/default = SubResource( 8 )
+
+[node name="SoundEffects" type="AudioStreamPlayer" parent="."]
+[connection signal="p1_info" from="." to="Player1Score" method="_on_GUI_p1_info"]
+[connection signal="p1_score_changed" from="." to="Player1Score" method="_on_GUI_p1_score_changed"]
+[connection signal="p2_info" from="." to="Player2Score" method="_on_GUI_p2_info"]
+[connection signal="p2_score_changed" from="." to="Player2Score" method="_on_GUI_p2_score_changed"]
+[connection signal="animation_finished" from="Transition/TransitionAnim" to="." method="_on_TransitionAnim_animation_finished"]
+[connection signal="menu_changed" from="Transition/Menu" to="." method="_on_Menu_menu_changed"]
+[connection signal="menu_select" from="Transition/Menu" to="." method="_on_Menu_menu_select"]
+[connection signal="animation_finished" from="Transition/Menu/MenuAnim" to="Transition/Menu" method="_on_MenuAnim_animation_finished"]
+
+[editable path="Transition"]

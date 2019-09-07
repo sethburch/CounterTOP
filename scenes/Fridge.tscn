@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Fridge.gd" type="Script" id=2]
+[ext_resource path="res://scenes/FridgeAnims.tres" type="SpriteFrames" id=3]
+
+
+
+
+[sub_resource type="Shader" id=1]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform float width : hint_range(0.0, 30.0);
+uniform vec4 outline_color : hint_color;
+
+void fragment() {
+	float size = width * 1.0 / float(textureSize(TEXTURE, 0).x);
+	
+	vec4 sprite_color = texture(TEXTURE, UV);
+	float alpha = -8.0 * sprite_color.a;
+	alpha += texture(TEXTURE, UV + vec2(0.0, -size)).a;
+	alpha += texture(TEXTURE, UV + vec2(size, -size)).a;
+	alpha += texture(TEXTURE, UV + vec2(size, 0.0)).a;
+	alpha += texture(TEXTURE, UV + vec2(size, size)).a;
+	alpha += texture(TEXTURE, UV + vec2(0.0, size)).a;
+	alpha += texture(TEXTURE, UV + vec2(-size, size)).a;
+	alpha += texture(TEXTURE, UV + vec2(-size, 0.0)).a;
+	alpha += texture(TEXTURE, UV + vec2(-size, -size)).a;
+	
+	vec4 final_color = mix(sprite_color, outline_color, clamp(alpha, 0.0, 1.0));
+	COLOR = vec4(final_color.rgb, clamp(abs(alpha) + sprite_color.a, 0.0, 1.0));
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/width = 2.0
+shader_param/outline_color = Color( 0.882353, 0.372549, 0.372549, 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 7.17633, 9.95488 )
+
+[sub_resource type="SegmentShape2D" id=4]
+resource_local_to_scene = true
+a = Vector2( 16, -2 )
+b = Vector2( 300, -2 )
+
+[sub_resource type="SegmentShape2D" id=5]
+resource_local_to_scene = true
+a = Vector2( 16, -2 )
+b = Vector2( 300, -2 )
+
+[node name="Fridge" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource( 2 )
+position = Vector2( 10.8358, 21.6469 )
+frames = ExtResource( 3 )
+offset = Vector2( -16.6179, -21.9759 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = true
+position = Vector2( 8.86, 12.0368 )
+shape = SubResource( 3 )
+
+[node name="Gun" parent="." index="9"]
+editor/display_folded = true
+
+[node name="StartCap" parent="Gun/Line2D" index="0"]
+animation = "2"
+
+[node name="EndCap" parent="Gun/Line2D" index="1"]
+animation = "2"
+
+[node name="blob" parent="Gun/Line2D" index="4"]
+frame = 2
+
+[node name="Hitbox1" parent="Gun/Hitbox" index="0"]
+shape = SubResource( 4 )
+
+[node name="Hitbox2" parent="Gun/Hitbox" index="1"]
+shape = SubResource( 4 )
+
+[node name="Hitbox3" parent="Gun/Hitbox" index="2"]
+shape = SubResource( 4 )
+
+[node name="Hitbox4" parent="Gun/Hitbox" index="3"]
+shape = SubResource( 4 )
+
+[node name="Hitbox5" parent="Gun/Hitbox" index="4"]
+shape = SubResource( 4 )
+
+[node name="Hitbox6" parent="Gun/Hitbox" index="5"]
+shape = SubResource( 4 )
+
+[node name="Hitbox7" parent="Gun/Hitbox" index="6"]
+shape = SubResource( 4 )
+
+[node name="Hitbox8" parent="Gun/Hitbox" index="7"]
+shape = SubResource( 5 )
+
+[node name="Hitbox9" parent="Gun/Hitbox" index="8"]
+shape = SubResource( 5 )
+
+[node name="AnimatedSprite" parent="Sword" index="0"]
+position = Vector2( 35.019, -2.351 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="CollisionShape2D" parent="Sword" index="1"]
+position = Vector2( 25, 0.554 )
+scale = Vector2( 1.5, 1.5 )
+
+[editable path="Gun"]
+
+[editable path="Sword"]

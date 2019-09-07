@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/crack_hit.wav-07c12ff9948c41d0331352288d6191c0.sample"
+
+[deps]
+
+source_file="res://assets/sound/fx/crack_hit.wav"
+dest_files=[ "res://.import/crack_hit.wav-07c12ff9948c41d0331352288d6191c0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

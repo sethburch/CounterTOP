@@ -1,0 +1,194 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/ui/character_select/top_red_bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/character_select/fridge_score_icon_blank.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ScoreIconAnim.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/ui/character_select/fridge_score_anim1.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/character_select/fridge_score_anim2.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/character_select/fridge_score_icon_filled.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/character_select/micro_icon2.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/character_select/micro_icon3.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/character_select/micro_icon4.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/character_select/micro_icon1.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/character_select/toast_score_blank.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/character_select/toast_score_anim1.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/character_select/toast_score_anim2.png" type="Texture" id=13]
+[ext_resource path="res://assets/ui/character_select/toast_score_filled.png" type="Texture" id=14]
+
+
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "fridge_anim"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "micro_anim"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 10 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1.10957, 1.86607, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 14 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fridge_anim"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1.10957, 1.86607, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1.46409, 1.86607, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1.10957, 1.86607, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1.10957, 1.86607, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ) ]
+}
+
+[node name="Lives" type="NinePatchRect"]
+margin_right = 150.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 150, 0 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 135, 32 )
+patch_margin_top = 32
+patch_margin_right = 12
+
+[node name="Sep" type="HBoxContainer" parent="."]
+margin_top = 3.89
+margin_right = 141.71
+margin_bottom = 24.89
+custom_constants/separation = 1
+alignment = 1
+
+[node name="1" type="TextureRect" parent="Sep"]
+margin_left = 18.0
+margin_right = 38.0
+margin_bottom = 24.0
+texture = ExtResource( 2 )
+
+[node name="ScoreIconAnim" parent="Sep/1" instance=ExtResource( 3 )]
+anims/fridge_anim = SubResource( 1 )
+anims/micro_anim = SubResource( 2 )
+anims/toast_anim = SubResource( 3 )
+
+[node name="2" type="TextureRect" parent="Sep"]
+margin_left = 39.0
+margin_right = 59.0
+margin_bottom = 24.0
+texture = ExtResource( 2 )
+
+[node name="ScoreIconAnim" parent="Sep/2" instance=ExtResource( 3 )]
+anims/fridge_anim = SubResource( 4 )
+anims/toast_anim = SubResource( 3 )
+
+[node name="3" type="TextureRect" parent="Sep"]
+margin_left = 60.0
+margin_right = 80.0
+margin_bottom = 24.0
+texture = ExtResource( 2 )
+
+[node name="ScoreIconAnim" parent="Sep/3" instance=ExtResource( 3 )]
+anims/fridge_anim = SubResource( 5 )
+anims/toast_anim = SubResource( 3 )
+
+[node name="4" type="TextureRect" parent="Sep"]
+margin_left = 81.0
+margin_right = 101.0
+margin_bottom = 24.0
+texture = ExtResource( 2 )
+
+[node name="ScoreIconAnim" parent="Sep/4" instance=ExtResource( 3 )]
+anims/fridge_anim = SubResource( 6 )
+anims/toast_anim = SubResource( 3 )
+
+[node name="5" type="TextureRect" parent="Sep"]
+margin_left = 102.0
+margin_right = 122.0
+margin_bottom = 24.0
+texture = ExtResource( 2 )
+
+[node name="ScoreIconAnim" parent="Sep/5" instance=ExtResource( 3 )]
+anims/fridge_anim = SubResource( 7 )
+anims/toast_anim = SubResource( 3 )

@@ -1,0 +1,618 @@
+[gd_scene load_steps=60 format=2]
+
+[ext_resource path="res://scripts/Gun.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/gun/gun_reload_3.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/gun/gun_reload_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/gun/gun_reload_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/gun/gun_shoot_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/gun/gun_shoot_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/gun/gun_shoot_3.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/gun/gun_idle_1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/gun/gun_idle_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/gun/gun_idle_3.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/beam/beam-0-mid.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/beam/beam-1-back.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/beam/beam-2-back.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/beam/beam-4-back.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/beam/beam-5-back.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/beam/beam_back.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/effects/ln-2-front.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/effects/ln-3-front.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/effects/ln-1-front.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/effects/ln-5-front.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/effects/ln-4-back.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/beam/beam-1-front.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/beam/beam-2-front.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/beam/beam-4-front.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/beam/beam-5-front.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/beam/beam_head.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/beam/beam-1-mid.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/beam/beam-2-mid.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/beam/beam_mid.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/beam/beam-4-mid.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/effects/ln-1-back.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/effects/ln-2-back.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/effects/ln-3-back.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprites/effects/ln-4-front.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/effects/ln-5-back.png" type="Texture" id=35]
+[ext_resource path="res://scenes/GunParticle.tscn" type="PackedScene" id=36]
+[ext_resource path="res://assets/sprites/beam/lazer_blast1.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprites/beam/lazer_blast2.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprites/beam/lazer_blast3.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/beam/lazer_blast4.png" type="Texture" id=40]
+[ext_resource path="res://assets/anim/particle/spark/spark00.png" type="Texture" id=41]
+[ext_resource path="res://assets/anim/particle/spark/spark01.png" type="Texture" id=42]
+[ext_resource path="res://assets/anim/particle/spark/spark02.png" type="Texture" id=43]
+[ext_resource path="res://assets/anim/particle/spark/spark03.png" type="Texture" id=44]
+[ext_resource path="res://assets/anim/particle/spark/spark04.png" type="Texture" id=45]
+[ext_resource path="res://assets/anim/particle/spark/spark05.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprites/gun/gun_light.png" type="Texture" id=47]
+
+
+
+
+
+
+
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "Reloading",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "Shoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "4",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "ln2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "ln3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "ln1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "ln5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "ln4",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "4",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=4]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.12, 0.18, 0.24, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 0.901251, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:width")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.12, 0.18, 0.24, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 7.0, 11.0, 15.0, 23.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("StartCap:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.12, 0.18, 0.24, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "1", "2", "3", "4" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EndCap:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.12, 0.18, 0.24, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "1", "2", "3", "4" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("StartCap:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EndCap:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 1 ) ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_shoot_sound"
+} ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "beam_big"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.12, 0.18, 0.24, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 0.901251, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:width")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.12, 0.18, 0.24, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 7.0, 11.0, 15.0, 23.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("StartCap:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.12, 0.18, 0.24, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "1", "2", "3", "4" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EndCap:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.12, 0.18, 0.24, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "1", "2", "3", "4" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("StartCap:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EndCap:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.7, 1 ) ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_shoot_sound"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "end"
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("StartCap:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "ln1", "ln2", "ln3", "ln4", "ln5" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:width")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 19.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("StartCap:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EndCap:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Curve" id=6]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0.00771604, 22.44 ), 0.0, 0.0, 0, 0, Vector2( 0.96965, -195.8 ), -1774.08, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=7]
+colors = PoolColorArray( 0.580392, 0.992157, 1, 1, 0, 0.596078, 0.862745, 1 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "default",
+"speed": 13.0
+} ]
+
+[sub_resource type="ParticlesMaterial" id=9]
+emission_shape = 2
+emission_box_extents = Vector3( 2000, 50, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -10, 0 )
+angular_velocity = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 10.0
+scale_random = 0.5
+anim_speed = 5.0
+anim_speed_random = 0.5
+
+[sub_resource type="AnimatedTexture" id=10]
+frames = 6
+fps = 10.0
+frame_0/texture = ExtResource( 41 )
+frame_1/texture = ExtResource( 42 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 43 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 44 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 45 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 46 )
+frame_5/delay_sec = 0.0
+
+[sub_resource type="SegmentShape2D" id=11]
+resource_local_to_scene = true
+a = Vector2( 16, -2 )
+b = Vector2( 300, -2 )
+
+[node name="Gun" type="Node2D"]
+position = Vector2( -0.135277, -1.75858 )
+z_index = -1
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 16, -2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.226662, 2.53273 )
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 1
+speed_scale = 2.0
+playing = true
+offset = Vector2( 7.77334, -2.53273 )
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 28.63, -1.42 )
+rotation = -1.5708
+scale = Vector2( 2.7, 1 )
+z_as_relative = false
+points = PoolVector2Array( 0, 0, 0, 50 )
+width = 1.0
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 11 )
+texture_mode = 1
+
+[node name="StartCap" type="AnimatedSprite" parent="Line2D"]
+visible = false
+position = Vector2( -0.290695, -5.04823 )
+rotation = 1.5708
+frames = SubResource( 2 )
+animation = "1"
+
+[node name="EndCap" type="AnimatedSprite" parent="Line2D"]
+visible = false
+position = Vector2( -0.290924, 56.998 )
+rotation = 1.5708
+frames = SubResource( 3 )
+animation = "1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Line2D"]
+anims/beam = SubResource( 4 )
+anims/beam_big = SubResource( 12 )
+anims/end = SubResource( 5 )
+
+[node name="GunParticle" parent="Line2D" instance=ExtResource( 36 )]
+visible = false
+position = Vector2( 1.30015, -4.2812 )
+rotation = 1.5708
+radial_accel_curve = SubResource( 6 )
+color_ramp = SubResource( 7 )
+
+[node name="blob" type="AnimatedSprite" parent="Line2D"]
+visible = false
+use_parent_material = true
+position = Vector2( 1.75859, -4.26858 )
+frames = SubResource( 8 )
+frame = 3
+playing = true
+
+[node name="AimRay" type="RayCast2D" parent="."]
+position = Vector2( 16, -2 )
+enabled = true
+cast_to = Vector2( 50, 0 )
+collide_with_areas = true
+
+[node name="ShootTime" type="Timer" parent="."]
+wait_time = 0.04
+one_shot = true
+
+[node name="CDTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="GunShootParticle" type="Particles2D" parent="."]
+visible = false
+position = Vector2( 2034.89, 0 )
+emitting = false
+amount = 200
+speed_scale = 3.0
+explosiveness = 1.0
+fixed_fps = 6
+visibility_rect = Rect2( -2100, -100, 200, 200 )
+process_material = SubResource( 9 )
+texture = SubResource( 10 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 22, -3 )
+texture = ExtResource( 47 )
+offset = Vector2( 32, 0 )
+texture_scale = 2.0
+color = Color( 0.572549, 0.909804, 0.752941, 1 )
+energy = 1.3
+
+[node name="Hitbox" type="Area2D" parent="."]
+priority = 1.0
+collision_layer = 0
+collision_mask = 0
+
+[node name="Hitbox1" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 11 )
+
+[node name="Hitbox2" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, -7 )
+shape = SubResource( 11 )
+
+[node name="Hitbox3" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, 7 )
+shape = SubResource( 11 )
+
+[node name="Hitbox4" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, 14 )
+shape = SubResource( 11 )
+
+[node name="Hitbox5" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, -14 )
+shape = SubResource( 11 )
+
+[node name="Hitbox6" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, -21 )
+shape = SubResource( 11 )
+
+[node name="Hitbox7" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, 21 )
+shape = SubResource( 11 )
+
+[node name="Hitbox8" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, 27 )
+shape = SubResource( 11 )
+disabled = true
+
+[node name="Hitbox9" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, -27 )
+shape = SubResource( 11 )
+disabled = true
+
+[node name="SoundEffects" type="AudioStreamPlayer" parent="."]
+[connection signal="animation_finished" from="Line2D/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="CDTimer" to="." method="_on_CDTimer_timeout"]

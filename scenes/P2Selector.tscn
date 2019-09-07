@@ -1,0 +1,126 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/ui/p2_shine/p2_selected.png" type="Texture" id=1]
+[ext_resource path="res://scripts/P1P2Selector.gd" type="Script" id=2]
+[ext_resource path="res://assets/ui/character_select/p2_select2.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/character_select/p2_select.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/p2_shine/p2_select00.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/p2_shine/p2_select01.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/p2_shine/p2_select02.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/p2_shine/p2_select03.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/p2_shine/p2_select04.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/p2_shine/p2_select05.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/p2_shine/p2_select06.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/p2_shine/p2_select07.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/p2_shine/p2_select08.png" type="Texture" id=13]
+
+
+
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/p2_select3.png-a73ff60d9c90cfddca4d5df558be9951.stex"
+
+[sub_resource type="Animation" id=2]
+resource_name = "p2_blink"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), SubResource( 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "p2_select"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 3 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "p2_selected"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "p2_shine"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45 ),
+"transitions": PoolRealArray( 0.999999, 1, 1, 1, 1, 1.18921, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[node name="P2Selector" type="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.0
+margin_top = -196.0
+margin_right = 71.0
+margin_bottom = 196.0
+rect_pivot_offset = Vector2( 70.7585, 198.628 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+anim = "p2_blink"
+anim_selected = "p2_selected"
+anim_shine = "p2_shine"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/p2_blink = SubResource( 2 )
+anims/p2_select = SubResource( 3 )
+anims/p2_selected = SubResource( 4 )
+anims/p2_shine = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

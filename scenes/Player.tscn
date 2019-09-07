@@ -1,0 +1,391 @@
+[gd_scene load_steps=89 format=2]
+
+[ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/anim/toast/toast_fall.png" type="Texture" id=2]
+[ext_resource path="res://assets/anim/toast/toast_super_fall.png" type="Texture" id=3]
+[ext_resource path="res://assets/anim/toast/spawnin/toast_spawnin00.png" type="Texture" id=4]
+[ext_resource path="res://assets/anim/toast/spawnin/toast_spawnin01.png" type="Texture" id=5]
+[ext_resource path="res://assets/anim/toast/spawnin/toast_spawnin02.png" type="Texture" id=6]
+[ext_resource path="res://assets/anim/toast/spawnin/toast_spawnin03.png" type="Texture" id=7]
+[ext_resource path="res://assets/anim/toast/spawnin/toast_spawnin04.png" type="Texture" id=8]
+[ext_resource path="res://assets/anim/toast/spawnin/toast_spawnin05.png" type="Texture" id=9]
+[ext_resource path="res://assets/anim/toast/spawnin/toast_spawnin06.png" type="Texture" id=10]
+[ext_resource path="res://assets/anim/toast/toast_run_0005_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/anim/toast/toast_run_0004_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/anim/toast/toast_run_0003_3.png" type="Texture" id=13]
+[ext_resource path="res://assets/anim/toast/toast_run_0002_4.png" type="Texture" id=14]
+[ext_resource path="res://assets/anim/toast/toast_run_0001_5.png" type="Texture" id=15]
+[ext_resource path="res://assets/anim/toast/toast_run_0000_6.png" type="Texture" id=16]
+[ext_resource path="res://assets/anim/toast/idle_blink/toast_idle_blink01.png" type="Texture" id=17]
+[ext_resource path="res://assets/anim/toast/idle_blink/toast_idle_blink02.png" type="Texture" id=18]
+[ext_resource path="res://assets/anim/toast/idle_blink/toast_idle_blink03.png" type="Texture" id=19]
+[ext_resource path="res://assets/anim/toast/toast_jump2.png" type="Texture" id=20]
+[ext_resource path="res://assets/anim/toast/squash/toast_squash00.png" type="Texture" id=21]
+[ext_resource path="res://assets/anim/toast/squash/toast_squash01.png" type="Texture" id=22]
+[ext_resource path="res://assets/anim/toast/dash/toast_dash00.png" type="Texture" id=23]
+[ext_resource path="res://assets/anim/toast/dash/toast_dash01.png" type="Texture" id=24]
+[ext_resource path="res://assets/anim/toast/dash/toast_dash02.png" type="Texture" id=25]
+[ext_resource path="res://assets/anim/toast/dash/toast_dash03.png" type="Texture" id=26]
+[ext_resource path="res://assets/anim/toast/dash/toast_dash04.png" type="Texture" id=27]
+[ext_resource path="res://assets/anim/toast/dash/toast_dash05.png" type="Texture" id=28]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop00.png" type="Texture" id=29]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop02.png" type="Texture" id=30]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop03.png" type="Texture" id=31]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop01.png" type="Texture" id=32]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop04.png" type="Texture" id=33]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop05.png" type="Texture" id=34]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop06.png" type="Texture" id=35]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop07.png" type="Texture" id=36]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop08.png" type="Texture" id=37]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop10.png" type="Texture" id=38]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop11.png" type="Texture" id=39]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop12.png" type="Texture" id=40]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop13.png" type="Texture" id=41]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop14.png" type="Texture" id=42]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop15.png" type="Texture" id=43]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop16.png" type="Texture" id=44]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop17.png" type="Texture" id=45]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop18.png" type="Texture" id=46]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop19.png" type="Texture" id=47]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop20.png" type="Texture" id=48]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop21.png" type="Texture" id=49]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop22.png" type="Texture" id=50]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop23.png" type="Texture" id=51]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop24.png" type="Texture" id=52]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop25.png" type="Texture" id=53]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop26.png" type="Texture" id=54]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop27.png" type="Texture" id=55]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop28.png" type="Texture" id=56]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop29.png" type="Texture" id=57]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop30.png" type="Texture" id=58]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop31.png" type="Texture" id=59]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop32.png" type="Texture" id=60]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop33.png" type="Texture" id=61]
+[ext_resource path="res://assets/anim/toast/idle_pop/toast_idle_toastpop34.png" type="Texture" id=62]
+[ext_resource path="res://assets/anim/toast/wall_slide/wall_slide00.png" type="Texture" id=63]
+[ext_resource path="res://assets/anim/toast/wall_slide/wall_slide01.png" type="Texture" id=64]
+[ext_resource path="res://assets/anim/toast/wall_slide/wall_slide02.png" type="Texture" id=65]
+[ext_resource path="res://assets/anim/toast/idle/toast_idle00.png" type="Texture" id=66]
+[ext_resource path="res://assets/anim/toast/idle/toast_idle01.png" type="Texture" id=67]
+[ext_resource path="res://assets/anim/toast/idle/toast_idle02.png" type="Texture" id=68]
+[ext_resource path="res://assets/sound/fx/pickup.wav" type="AudioStream" id=69]
+[ext_resource path="res://scenes/Trail.tscn" type="PackedScene" id=70]
+[ext_resource path="res://assets/sprites/effects/dash_trail.png" type="Texture" id=71]
+[ext_resource path="res://scripts/HitLine.gd" type="Script" id=72]
+[ext_resource path="res://scenes/Gun.tscn" type="PackedScene" id=73]
+[ext_resource path="res://scenes/Sword.tscn" type="PackedScene" id=74]
+[ext_resource path="res://assets/ui/arrow_attack.png" type="Texture" id=75]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float width : hint_range(0.0, 30.0);
+uniform vec4 outline_color : hint_color;
+
+void fragment() {
+	float size = width * 1.0 / float(textureSize(TEXTURE, 0).x);
+	
+	vec4 sprite_color = texture(TEXTURE, UV);
+	float alpha = -8.0 * sprite_color.a;
+	alpha += texture(TEXTURE, UV + vec2(0.0, -size)).a;
+	alpha += texture(TEXTURE, UV + vec2(size, -size)).a;
+	alpha += texture(TEXTURE, UV + vec2(size, 0.0)).a;
+	alpha += texture(TEXTURE, UV + vec2(size, size)).a;
+	alpha += texture(TEXTURE, UV + vec2(0.0, size)).a;
+	alpha += texture(TEXTURE, UV + vec2(-size, size)).a;
+	alpha += texture(TEXTURE, UV + vec2(-size, 0.0)).a;
+	alpha += texture(TEXTURE, UV + vec2(-size, -size)).a;
+	
+	vec4 final_color = mix(sprite_color, outline_color, clamp(alpha, 0.0, 1.0));
+	COLOR = vec4(final_color.rgb, clamp(abs(alpha) + sprite_color.a, 0.0, 1.0));
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/width = 2.0
+shader_param/outline_color = Color( 0.882353, 0.372549, 0.372549, 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "SuperFall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Spawnin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "IdleAnim1",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "Squash",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "Dash",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ) ],
+"loop": false,
+"name": "IdleAnim0",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
+"loop": false,
+"name": "WallSlide",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 2.0
+} ]
+
+[sub_resource type="Animation" id=4]
+resource_name = "attack"
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sword:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Sword")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Sword:can_reflect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Reflect/ReflectHitbox:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 2.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.7, 1.3, 1.4, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.486275 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 7.17633, 8.30254 )
+
+[sub_resource type="Gradient" id=7]
+colors = PoolColorArray( 1, 1, 1, 0.588235, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+
+[sub_resource type="Curve" id=9]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 10 )
+color_ramp = SubResource( 8 )
+
+[sub_resource type="CanvasItemMaterial" id=12]
+blend_mode = 1
+
+[sub_resource type="CircleShape2D" id=13]
+radius = 31.3881
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 7.18288, 16.981 )
+frames = SubResource( 3 )
+animation = "Idle"
+speed_scale = 2.0
+centered = false
+offset = Vector2( -8.965, -17.31 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/attack = SubResource( 4 )
+anims/inv = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 6.86, 10.47 )
+shape = SubResource( 6 )
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="SoundEffects" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 69 )
+
+[node name="TrailParticle" type="Particles2D" parent="."]
+visible = false
+position = Vector2( 0, 8.7 )
+emitting = false
+amount = 10
+lifetime = 0.3
+speed_scale = 5.0
+local_coords = false
+process_material = SubResource( 11 )
+texture = ExtResource( 26 )
+
+[node name="TrailLine" parent="." instance=ExtResource( 70 )]
+texture = ExtResource( 71 )
+target_path = NodePath("..")
+trail_length = 10
+
+[node name="IdleTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="HitLine" type="Line2D" parent="."]
+material = SubResource( 12 )
+z_index = -1
+points = PoolVector2Array( 0, -1000, 0, 0, 0, 0 )
+width = 0.0
+default_color = Color( 0.764706, 0.968627, 0.984314, 1 )
+texture_mode = 1
+script = ExtResource( 72 )
+
+[node name="Gun" parent="." instance=ExtResource( 73 )]
+position = Vector2( 16.6069, 12.4949 )
+
+[node name="Sword" parent="." instance=ExtResource( 74 )]
+position = Vector2( 15.6881, 11.2214 )
+collision_layer = 0
+collision_mask = 0
+can_reflect = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="AttackStartTimer" type="Timer" parent="."]
+wait_time = 0.07
+one_shot = true
+
+[node name="Arrow" type="Sprite" parent="."]
+visible = false
+position = Vector2( 6.23022, 7.34221 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 75 )
+offset = Vector2( -26.0354, -0.126441 )
+
+[node name="Reflect" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="ReflectHitbox" type="CollisionShape2D" parent="Reflect"]
+position = Vector2( 7.55225, 10.7132 )
+shape = SubResource( 13 )
+disabled = true
+
+[node name="SwordCD" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+[connection signal="end_attack" from="." to="Sword" method="_on_Player_end_attack"]
+[connection signal="hit_effect_over" from="." to="HitLine" method="_on_Player_hit_effect_over"]
+[connection signal="hit_effect_start" from="." to="HitLine" method="_on_Player_hit_effect_start"]
+[connection signal="start_attack" from="." to="Sword" method="_on_Player_start_attack"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]
+[connection signal="killed_player" from="Gun" to="." method="_on_Gun_killed_player"]
+[connection signal="shoot_finished" from="Gun" to="." method="_on_Gun_shoot_finished"]
+[connection signal="attack_finished" from="Sword" to="." method="_on_Sword_attack_finished"]
+[connection signal="killed_player" from="Sword" to="." method="_on_Sword_killed_player"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="AttackStartTimer" to="." method="_on_AttackStartTimer_timeout"]
+[connection signal="timeout" from="SwordCD" to="." method="_on_SwordCD_timeout"]

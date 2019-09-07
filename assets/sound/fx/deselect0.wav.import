@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/deselect0.wav-7985f60130d4656e8cadae587a4ba44b.sample"
+
+[deps]
+
+source_file="res://assets/sound/fx/deselect0.wav"
+dest_files=[ "res://.import/deselect0.wav-7985f60130d4656e8cadae587a4ba44b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

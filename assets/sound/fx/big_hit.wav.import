@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/big_hit.wav-f51a5509f0f4707ce62bb190213f42f3.sample"
+
+[deps]
+
+source_file="res://assets/sound/fx/big_hit.wav"
+dest_files=[ "res://.import/big_hit.wav-f51a5509f0f4707ce62bb190213f42f3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

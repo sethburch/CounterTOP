@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://themes/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/ScoreIcon.gd" type="Script" id=2]
+[ext_resource path="res://scenes/NinePatchRect.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/ui/character_select/bottom_red_bg.png" type="Texture" id=4]
+
+
+
+
+
+
+[sub_resource type="AnimatedTexture" id=1]
+
+[node name="ScoreUI" type="VBoxContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 157.0
+margin_bottom = 63.0
+theme = ExtResource( 1 )
+custom_constants/separation = 0
+script = ExtResource( 2 )
+
+[node name="Lives" parent="." instance=ExtResource( 3 )]
+
+[node name="Control" type="Control" parent="."]
+margin_top = 32.0
+margin_right = 150.0
+margin_bottom = 32.0
+
+[node name="NameBG" type="NinePatchRect" parent="Control"]
+margin_right = 104.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 104, 0 )
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 92, 24 )
+patch_margin_left = 5
+patch_margin_top = 24
+patch_margin_right = 12
+
+[node name="Label" type="Label" parent="Control/NameBG"]
+margin_left = 13.28
+margin_top = 2.31
+margin_right = 53.28
+margin_bottom = 16.31
+text = "Test"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = 32.0
+margin_right = 150.0
+margin_bottom = 33.0
+texture = SubResource( 1 )

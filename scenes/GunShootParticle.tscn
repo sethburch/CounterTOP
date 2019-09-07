@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/anim/particle/spark/spark00.png" type="Texture" id=1]
+[ext_resource path="res://assets/anim/particle/spark/spark01.png" type="Texture" id=2]
+[ext_resource path="res://assets/anim/particle/spark/spark02.png" type="Texture" id=3]
+[ext_resource path="res://assets/anim/particle/spark/spark03.png" type="Texture" id=4]
+[ext_resource path="res://assets/anim/particle/spark/spark04.png" type="Texture" id=5]
+[ext_resource path="res://assets/anim/particle/spark/spark05.png" type="Texture" id=6]
+[ext_resource path="res://scripts/DustParticle.gd" type="Script" id=7]
+
+
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 2
+emission_box_extents = Vector3( 2000, 50, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -10, 0 )
+angular_velocity = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 10.0
+scale_random = 0.5
+anim_speed = 5.0
+anim_speed_random = 0.5
+
+[sub_resource type="AnimatedTexture" id=8]
+frames = 6
+fps = 10.0
+frame_0/texture = ExtResource( 1 )
+frame_1/texture = ExtResource( 2 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 3 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 4 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 5 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 6 )
+frame_5/delay_sec = 0.0
+
+[node name="Particles2D" type="Particles2D"]
+emitting = false
+amount = 3
+one_shot = true
+speed_scale = 3.0
+explosiveness = 1.0
+fixed_fps = 6
+process_material = SubResource( 7 )
+texture = SubResource( 8 )
+script = ExtResource( 7 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

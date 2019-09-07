@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/ScoreIcon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/character_select/top_blue_bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/character_select/bottom_blue_bg.png" type="Texture" id=3]
+
+
+
+
+[node name="Player2" index="0" instance=ExtResource( 1 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 56.0
+size_flags_horizontal = 0
+
+[node name="Lives" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="Sep" parent="Lives" index="0"]
+margin_left = 7.79
+margin_top = 2.04
+margin_right = 149.5
+margin_bottom = 26.04
+
+[node name="NameBG" parent="Control" index="0"]
+margin_left = 46.0
+margin_right = 150.0
+texture = ExtResource( 3 )
+
+[node name="Label" parent="Control/NameBG" index="0"]
+margin_left = 58.79
+margin_right = 98.7899
+grow_horizontal = 0
+grow_vertical = 0
+
+[editable path="Lives"]

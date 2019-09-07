@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/charge_and_hitwav.wav-7f3089edbc2f7b5d62cc64503126176d.sample"
+
+[deps]
+
+source_file="res://assets/sound/fx/charge_and_hitwav.wav"
+dest_files=[ "res://.import/charge_and_hitwav.wav-7f3089edbc2f7b5d62cc64503126176d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

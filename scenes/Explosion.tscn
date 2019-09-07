@@ -1,0 +1,44 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/anim/explosion_big/explosion_big00.png" type="Texture" id=1]
+[ext_resource path="res://assets/anim/explosion_big/explosion_big01.png" type="Texture" id=2]
+[ext_resource path="res://assets/anim/explosion_big/explosion_big02.png" type="Texture" id=3]
+[ext_resource path="res://assets/anim/explosion_big/explosion_big03.png" type="Texture" id=4]
+[ext_resource path="res://assets/anim/explosion_big/explosion_big04.png" type="Texture" id=5]
+[ext_resource path="res://assets/anim/explosion_big/explosion_big05.png" type="Texture" id=6]
+[ext_resource path="res://assets/anim/explosion_big/explosion_big06.png" type="Texture" id=7]
+[ext_resource path="res://assets/anim/explosion/ekusporosion00.png" type="Texture" id=8]
+[ext_resource path="res://assets/anim/explosion/ekusporosion01.png" type="Texture" id=9]
+[ext_resource path="res://assets/anim/explosion/ekusporosion02.png" type="Texture" id=10]
+[ext_resource path="res://assets/anim/explosion/ekusporosion03.png" type="Texture" id=11]
+[ext_resource path="res://assets/anim/explosion/ekusporosion04.png" type="Texture" id=12]
+[ext_resource path="res://assets/anim/explosion/ekusporosion05.png" type="Texture" id=13]
+[ext_resource path="res://assets/anim/explosion/ekusporosion06.png" type="Texture" id=14]
+[ext_resource path="res://scripts/Explosion.gd" type="Script" id=15]
+[ext_resource path="res://assets/sprites/effects/light_test.png" type="Texture" id=16]
+
+
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), null ],
+"loop": false,
+"name": "default_old",
+"speed": 10.0
+} ]
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+frames = SubResource( 1 )
+script = ExtResource( 15 )
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 16 )
+color = Color( 1, 0.537255, 0.2, 1 )
+[connection signal="animation_finished" from="." to="." method="_on_AnimatedSprite_animation_finished"]
